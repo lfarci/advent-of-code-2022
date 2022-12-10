@@ -5,35 +5,53 @@ namespace AdventOfCode2022.Puzzles.Day01
 {
     internal class CalorieCountingPuzzle : Puzzle
     {
-        internal int FindHighestAmoumtOfCalories(string[] lines)
+        internal List<int> SumAmountOfCaloriesByElf(string[] lines)
         {
-            var totalCalories = new List<int>();
+            var caloriesByElf = new List<int>();
             int currentElfCalories = 0;
 
             foreach (string line in lines)
             {
+
                 if (string.IsNullOrEmpty(line.Trim()))
                 {
-                    totalCalories.Add(currentElfCalories);
+                    caloriesByElf.Add(currentElfCalories);
                     currentElfCalories = 0;
                 }
                 else
                 {
                     currentElfCalories += int.Parse(line);
                 }
+
             }
 
-            return totalCalories.Max();
+            caloriesByElf.Add(currentElfCalories);
+
+            return caloriesByElf;
+        }
+
+        internal int SumCaloriesForTopNElves(string[] lines, int elvesCount)
+        {
+            return SumAmountOfCaloriesByElf(lines)
+                .OrderByDescending(c => c)
+                .Take(elvesCount)
+                .Sum();
         }
 
         public override (Answer First, Answer Second) Run(string[] lines)
         {
             var secondAnswer = new Answer { Value = 0, Description = "Second answer" };
-            return (new Answer
+            return (
+            new Answer
             {
-                Value = FindHighestAmoumtOfCalories(lines),
+                Value = SumCaloriesForTopNElves(lines, 1),
                 Description = "Highest amount of calories"
-            }, secondAnswer);
+            },
+            new Answer
+            {
+                Value = SumCaloriesForTopNElves(lines, 3),
+                Description = "Sum of calories for the top 3 elves"
+            });
         }
     }
 }

@@ -31,11 +31,11 @@ namespace AdventOfCode2022.Puzzles.Tests
         }
 
         [Fact]
-        public void Run_EmptyInputFile_ReturnsSecondValueAsZero()
+        public void Run_Sample_ReturnsSumOfTopThreeCaloriesAmounts()
         {
             var puzzle = new CalorieCountingPuzzle();
             var answers = puzzle.Run(sample);
-            Assert.Equal(0, answers.Second.Value);
+            Assert.Equal(45000, answers.Second.Value);
         }
     }
 }
