@@ -9,7 +9,7 @@ class Program
         var app = AdventOfCodeConsole.Instance;
 
         app.StartYear(2022, year => {
-            year.Submit<ExamplePuzzle>().ForDay(1);
+            year.Submit<CalorieCountingPuzzle>().ForDay(1);
         });
 
         app.Run(args);
