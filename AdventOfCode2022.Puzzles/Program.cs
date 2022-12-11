@@ -1,5 +1,5 @@
 ﻿using AdventOfCode.Kit.Console;
-using AdventOfCode2022.Puzzles.Day01;
+using AdventOfCode2022.Puzzles;
 
 namespace AdventOfCode2022.Puzzles;
 class Program
@@ -10,6 +10,7 @@ class Program
 
         app.StartYear(2022, year => {
             year.Submit<CalorieCountingPuzzle>().ForDay(1);
+            year.Submit<RockPaperScissorsPuzzle>().ForDay(1);
         });
 
         app.Run(args);

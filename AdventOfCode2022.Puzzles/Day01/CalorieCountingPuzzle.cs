@@ -1,7 +1,7 @@
 using System.Runtime.CompilerServices;
 using AdventOfCode.Kit.Client.Models;
 
-namespace AdventOfCode2022.Puzzles.Day01
+namespace AdventOfCode2022.Puzzles
 {
     internal class CalorieCountingPuzzle : Puzzle
     {
@@ -40,18 +40,18 @@ namespace AdventOfCode2022.Puzzles.Day01
 
         public override (Answer First, Answer Second) Run(string[] lines)
         {
-            var secondAnswer = new Answer { Value = 0, Description = "Second answer" };
             return (
-            new Answer
-            {
-                Value = SumCaloriesForTopNElves(lines, 1),
-                Description = "Highest amount of calories"
-            },
-            new Answer
-            {
-                Value = SumCaloriesForTopNElves(lines, 3),
-                Description = "Sum of calories for the top 3 elves"
-            });
+                new Answer
+                {
+                    Value = SumCaloriesForTopNElves(lines, 1),
+                    Description = "Highest amount of calories"
+                },
+                new Answer
+                {
+                    Value = SumCaloriesForTopNElves(lines, 3),
+                    Description = "Sum of calories for the top 3 elves"
+                }
+            );
         }
     }
 }

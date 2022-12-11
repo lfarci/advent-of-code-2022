@@ -1,5 +1,3 @@
-using AdventOfCode2022.Puzzles.Day01;
-
 namespace AdventOfCode2022.Puzzles.Tests
 {
     public class CalorieCountingPuzzleTests
