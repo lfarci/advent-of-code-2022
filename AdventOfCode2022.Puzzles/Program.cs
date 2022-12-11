@@ -10,7 +10,7 @@ class Program
 
         app.StartYear(2022, year => {
             year.Submit<CalorieCountingPuzzle>().ForDay(1);
-            year.Submit<RockPaperScissorsPuzzle>().ForDay(1);
+            year.Submit<RockPaperScissorsPuzzle>().ForDay(2);
         });
 
         app.Run(args);
