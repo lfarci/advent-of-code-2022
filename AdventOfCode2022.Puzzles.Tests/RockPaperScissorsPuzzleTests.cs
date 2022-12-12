@@ -70,7 +70,6 @@ namespace AdventOfCode2022.Puzzles.Tests
             Assert.Equal(outcome, parsed.Outcome);
         }
 
-
         [Fact]
         void Run_Sample_ReturnsHighestAmountOfCaloriesAsFirstAnswer()
         {
