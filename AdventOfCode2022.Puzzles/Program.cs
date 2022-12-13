@@ -12,6 +12,7 @@ class Program
             year.Submit<CalorieCountingPuzzle>().ForDay(1);
             year.Submit<RockPaperScissorsPuzzle>().ForDay(2);
             year.Submit<RucksackReorganizationPuzzle>().ForDay(3);
+            year.Submit<CampCleanupPuzzle>().ForDay(4);
         });
 
         app.Run(args);
